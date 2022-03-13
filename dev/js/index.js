@@ -37,30 +37,48 @@ let quotes = [
 let quoteButton = document.getElementById("new-quote");
 let quoteText = document.getElementById("text");
 let quoteAuthor = document.getElementById("author");
-let pageColor = randomColor();
 let body = document.getElementsByTagName("body")[0];
 let copyTextLink = document.getElementById('copy-text');
 let tweet = document.getElementById('tweet-quote');
 
+
+
 newQuote();
+randomizeColors();
 
 quoteButton.addEventListener("click", () => {
     newQuote();
+    randomizeColors();
 })
 
 function newQuote() {
     let quoteNum = Math.floor(Math.random() * quotes.length);
     quoteText.innerHTML = quotes[quoteNum]["text"];
     quoteAuthor.innerHTML = ' - ' + quotes[quoteNum]["author"];
-    body.style.setProperty('--main-color', randomColor());
 }
 
-function randomColor() {
+function randomizeColors() {
     let red = Math.floor(Math.random() * 256);
     let green = Math.floor(Math.random() * 256);
     let blue = Math.floor(Math.random() * 256);
+    let luminance = calcLum(red, green, blue);
+    console.log(luminance)
     
-    return 'rgb(' + red + ', ' + green + ", " + blue + ')';
+    if (luminance < 127) {
+        body.style.setProperty('--quote-box-color', 'white');
+    } else {
+        body.style.setProperty('--quote-box-color', 'black');
+    }
+
+    let rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
+    body.style.setProperty('--main-color', rgb);
+
+    console.log(rgb)
+    
+}
+
+function calcLum(red, green, blue) {
+    return (0.2126 * red + 0.7152 * green + 0.0722 * blue);
 }
 
 copyTextLink.addEventListener('click', () => {

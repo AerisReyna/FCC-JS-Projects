@@ -1,9 +1,12 @@
 html, body {
     height: 100%;
+    width: 100%;
     --main-color: pink;
+    --quote-box-color: white;
 }
 main {
     background-color: var(--main-color);
+    color: var(--main-color);
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,9 +17,44 @@ main {
 #quote-box {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-height: 50%;
+    width: 60%;
+    min-height: 0%;
+    background-color: var(--quote-box-color);
+    border-radius: 20px;
+    padding: 20px;
 }
-p {
 
+#left-quote {
+    align-self: flex-start;
+}
+
+#text {
+    align-self: center;
+    text-align: center;
+    margin: 20px 30px;
+}
+
+#right-quote {
+    align-self: flex-end;
+}
+
+#author {
+    align-self: center;
+    min-width: 0%;
+}
+
+#links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#twitter-link {
+}
+
+#copy-text {
+}
+
+#new-quote {
+    color: var(--quote-box-color);
+    background-color: var(--main-color);
 }
