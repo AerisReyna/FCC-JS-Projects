@@ -3,7 +3,9 @@ html, body {
     width: 100%;
     --main-color: pink;
     --quote-box-color: white;
+    margin: 0;
 }
+
 main {
     background-color: var(--main-color);
     color: var(--main-color);
@@ -20,8 +22,6 @@ main {
     width: 60%;
     min-height: 0%;
     background-color: var(--quote-box-color);
-    border-radius: 20px;
-    padding: 20px;
 }
 
 #left-quote {
@@ -46,15 +46,58 @@ main {
 #links {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
-#twitter-link {
+
+#twitter-link, a {
+    color: var(--quote-box-color);
+    background-color: var(--main-color);
+    min-width: 0;
+    text-decoration: none;
+}
+
+
+
+#twitter-link:hover {
+    cursor: pointer;
 }
 
 #copy-text {
+    background-color: var(--main-color);
+    color: var(--quote-box-color);
+}
+
+#copy-text:hover {
+    cursor: pointer;
 }
 
 #new-quote {
     color: var(--quote-box-color);
     background-color: var(--main-color);
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#new-quote:hover {
+    cursor: pointer;
+}
+
+.borders {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+hr {
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-color);
+    border: none;
+}
+
+i {
+    font-size: 30px;
 }

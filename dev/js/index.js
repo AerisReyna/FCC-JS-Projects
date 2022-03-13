@@ -39,7 +39,7 @@ let quoteText = document.getElementById("text");
 let quoteAuthor = document.getElementById("author");
 let body = document.getElementsByTagName("body")[0];
 let copyTextLink = document.getElementById('copy-text');
-let tweet = document.getElementById('tweet-quote');
+let tweet = document.getElementById('twitter-link');
 
 
 
@@ -62,7 +62,6 @@ function randomizeColors() {
     let green = Math.floor(Math.random() * 256);
     let blue = Math.floor(Math.random() * 256);
     let luminance = calcLum(red, green, blue);
-    console.log(luminance)
     
     if (luminance < 127) {
         body.style.setProperty('--quote-box-color', 'white');
@@ -73,7 +72,6 @@ function randomizeColors() {
     let rgb = 'rgb(' + red + ', ' + green + ', ' + blue + ')';
     body.style.setProperty('--main-color', rgb);
 
-    console.log(rgb)
     
 }
 
