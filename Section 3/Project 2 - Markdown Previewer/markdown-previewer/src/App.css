@@ -1,0 +1,20 @@
+.Editor-label {
+    background-color: red;
+    width: 90vw;
+    justify-self: center;
+}
+
+.Editor-text {
+    width: 90%;
+    background-color: pink;
+}
+
+.Editor-container {
+    display: flex;
+    margin: auto;
+    background-color: orange;
+    width: 90%;
+    justify-content: center;
+    flex-direction: row;
+}
+
